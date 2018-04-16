@@ -12,7 +12,17 @@ wget https://raw.githubusercontent.com/jae-jae/amh4.2-xg/master/amh4.2.sh
 bash amh4.2.sh 2>&1 | tee amh.log
 
 ```
-
+## Nginx升级
+```nginx -V
+wget http://nginx.org/download/nginx-1.12.2.tar.gz
+tar zxvf nginx-1.12.2.tar.gz && cd nginx-1.12.2/
+./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_ssl_module --with-http_gzip_static_module --without-mail_pop3_module --without-mail_imap_module --without-mail_smtp_module --without-http_uwsgi_module --without-http_scgi_module --add-module=/usr/local/echo-nginx-module-0.42 --add-module=/usr/local/yaoweibin-ngx_http_substitutions_filter_module-e3291ac
+make
+mv /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx.old;
+cp objs/nginx /usr/local/nginx/sbin/nginx;
+make upgrade
+amh nginx restart
+```
 ## 面板特点
 
 1.支持多数据库选择,mysql5.5,mysql5.6,mysql5.7以及mariadb10.1，mariadb5.5

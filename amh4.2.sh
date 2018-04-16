@@ -4,7 +4,7 @@ export PATH
 
 clear;
 echo '================================================================';
-echo ' [LNMP/Nginx] Amysql Host - AMH 4.2 ( mod by  2014520.cn )';
+echo ' [LNMP/Nginx] Amysql Host - AMH 4.2 ( amh4.5 modify by  xiguage.cc )';
 echo ' http://Amysql.com';
 echo '================================================================';
 
@@ -25,7 +25,7 @@ StartDate='';
 StartDateSecond='';
 PHPDisable='';
 
-GetUrl='https://raw.githubusercontent.com/jae-jae/amh4.2-xg/master';
+GetUrl='https://raw.githubusercontent.com/vicacheung/amh4.2-xg/master';
 
 # Version
 AMSVersion='ams-1.5.0107-02';
@@ -42,9 +42,9 @@ Php54Version='php-5.4.45';
 Php55Version='php-5.5.33';
 Php56Version='php-5.6.19';
 Php70Version='php-7.1.12';
-NginxVersion='nginx-1.9.12b'; #伪装服务器名称版本
+NginxVersion='nginx-1.12.2'; #伪装服务器名称版本
 OpenSSLVersion='openssl-1.0.2e';
-NginxCachePurgeVersion='ngx_cache_purge-2.3';
+CachePurgeVersion='ngx_cache_purge-2.3';
 PureFTPdVersion='pure-ftpd-1.0.36';
 
 # Function List	*****************************************************************************
@@ -889,7 +889,7 @@ function InstallNginx()
 {
 	# [dir] /usr/local/nginx
 	echo "[${NginxVersion} Installing] ************************************************** >>";
-	Downloadfile "${NginxVersion}.tar.gz" "${GetUrl}/${NginxVersion}.tar.gz";	
+	Downloadfile "${NginxVersion}.tar.gz" "http://nginx.org/download/${NginxVersion}.tar.gz";	
 	rm -rf $AMHDir/packages/untar/$NginxVersion;
 	echo "tar -zxf ${NginxVersion}.tar.gz ing...";
 	tar -zxf $AMHDir/packages/$NginxVersion.tar.gz -C $AMHDir/packages/untar;

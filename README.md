@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/jae-jae/amh4.2-xg/master/amh4.2.sh
 bash amh4.2.sh 2>&1 | tee amh.log
 
 ```
-##Nginx升级
+## Nginx升级
 ```nginx -V
 wget http://nginx.org/download/nginx-1.12.2.tar.gz
 tar zxvf nginx-1.12.2.tar.gz && cd nginx-1.12.2/
